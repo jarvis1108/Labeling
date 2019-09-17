@@ -33,11 +33,17 @@ public class GetContentServlet extends HttpServlet {
         ResultDao rd = new ResultDaoImpl();
         String username = user.getUsername();
         int contentIndex = rd.countResultsByUsername(username);
+        int contentTotal = number;
 
-        session.setAttribute("contentList",contentList);
-        session.setAttribute("contentIndex",contentIndex);
-        session.setAttribute("contentTotal",number);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        if(contentIndex < contentTotal){
+            session.setAttribute("contentList",contentList);
+            session.setAttribute("contentIndex",contentIndex);
+            session.setAttribute("contentTotal",contentTotal);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        }else {
+            request.getRequestDispatcher("/thanks.jsp").forward(request, response);
+        }
+
 }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -77,11 +77,21 @@
             <a href="http://hci.whu.edu.cn/">WHU HCI</a>
         </h1>
 
+        <%
+            User user = (User)session.getAttribute("user");
+            String username = user.getUsername();;
+        %>
+
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
             <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li class="am-active"><a href="#">标注</a></li>
-                <li><a href="#">我的</a></li>
+                <li class="am-active"><a href="index.jsp">标注</a></li>
+                <li><a href="my.jsp">我的</a></li>
+                <li><a><%=username %></a></li>
             </ul>
+
+            <div class="am-topbar-right">
+                <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-pencil"></span> 注册</button>
+            </div>
         </div>
     </header>
 

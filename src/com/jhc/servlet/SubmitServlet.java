@@ -44,8 +44,7 @@ public class SubmitServlet extends HttpServlet {
         if(rd.submit(res)){
             request.getRequestDispatcher("/GetContentServlet").forward(request, response);
         }else{
-            //TODO：出错页面
-            request.setAttribute("errorInfo","提交失败");
+            session.setAttribute("errorInfo","提交失败，请重试");
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
 
