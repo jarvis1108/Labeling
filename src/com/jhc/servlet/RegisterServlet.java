@@ -4,6 +4,7 @@ import com.jhc.dao.InterfaceDao;
 import com.jhc.dao.InterfaceDaoImpl;
 import com.jhc.dao.UserDao;
 import com.jhc.dao.UserDaoImpl;
+import com.jhc.entity.Interface;
 import com.jhc.entity.User;
 
 import javax.servlet.ServletException;
@@ -54,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
 
         //用户注册
         if(ud.register(user)){
-            session.setAttribute("username", username);
+            session.setAttribute("user", user);
         }else{
             request.setAttribute("errorInfo","该手机号码已注册，请直接登录");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
@@ -62,11 +63,11 @@ public class RegisterServlet extends HttpServlet {
 
         //为新用户分配界面
         if(id.allocateInterfaceToUser(username)){
-            int interfaceId = id.getInterfaceIdByUser(username);
-            session.setAttribute("interfaceId", interfaceId);
+            Interface inter = id.getInterface(username);
+            session.setAttribute("inter", inter);
             request.getRequestDispatcher("/GetContentServlet").forward(request, response);
         }else{
-            request.setAttribute("errorInfo","本次实验已结束，谢谢");
+            request.setAttribute("errorInfo","本次实验已经结束，谢谢");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
 

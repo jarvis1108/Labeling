@@ -5,6 +5,7 @@ import com.jhc.dao.ContentDaoImpl;
 import com.jhc.dao.ResultDao;
 import com.jhc.dao.ResultDaoImpl;
 import com.jhc.entity.Content;
+import com.jhc.entity.Interface;
 import com.jhc.entity.Result;
 import com.jhc.entity.User;
 
@@ -20,14 +21,16 @@ import java.util.List;
 @WebServlet(name = "SubmitServlet", value = "/SubmitServlet")
 public class SubmitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
-        Content content = (Content)session.getAttribute("content") ;
+        Interface inter = (Interface)session.getAttribute("inter");
+        List<Content> contentList = (List<Content>)session.getAttribute("contentList");
+        int contentIndex = (int)session.getAttribute("contentIndex");
+        Content content = contentList.get(contentIndex);
 
         String username = user.getUsername();
+        int InterfaceId = inter.getInterfaceId();
         int contentId = content.getContentId();
-        int InterfaceId = 1;//TODO
         String result = request.getParameter("result");
 
         Result res = new Result();
@@ -39,8 +42,7 @@ public class SubmitServlet extends HttpServlet {
         ResultDao rd = new ResultDaoImpl();
 
         if(rd.submit(res)){
-            //TODO：提交后选中下一条内容
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
         }else{
             //TODO：出错页面
             request.setAttribute("errorInfo","提交失败");

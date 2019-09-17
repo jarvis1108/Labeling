@@ -1,6 +1,7 @@
 <%@ page import="com.jhc.entity.Content" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.jhc.entity.User" %>
+<%@ page import="com.jhc.entity.Interface" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -85,16 +86,17 @@
     </header>
 
     <%
-        int pageNum=1;
-        int pageTotal=10;
+        int contentIndex = (int)session.getAttribute("contentIndex");
+        int pageNum = contentIndex + 1;
+        int contentTotal = (int)session.getAttribute("contentTotal");
     %>
 
     <div class="am-g am-g-fixed blog-g-fixed">
 
         <div class="col-md-1 blog-index">
-            <a class="page-current"><%=pageNum %></a>
+            <a class="page-current"><%= pageNum %></a>
             <a>/</a>
-            <a class="page-total"><%=pageTotal %></a>
+            <a class="page-total"><%= contentTotal %></a>
         </div>
 
 
@@ -105,7 +107,8 @@
                         <p class="text-content">
                             <%
                                 String text = "";
-                                Content content = (Content)(session.getAttribute("content"));
+                                List<Content> contentList = (List<Content>)(session.getAttribute("contentList"));
+                                Content content = contentList.get(contentIndex);
                                 text = content.getContent().replace(" ","");
                                 out.println(text);
                             %>
@@ -118,19 +121,14 @@
             <button type="button" class="am-btn am-btn-block am-btn-danger" onclick="submit(1)">涉黄</button>
             <button type="button" class="am-btn am-btn-block am-btn-secondary" onclick="submit(0)">正常</button>
 
-
-            <%--<hr class="am-article-divider blog-hr">--%>
-            <%--<ul class="am-pagination blog-pagination">--%>
-                <%--<li class="am-pagination-prev"><a onclick="goLastPage()">&laquo; 上一篇</a></li>--%>
-                <%--<li class="am-pagination-next"><a onclick="goNextPage()">下一篇 &raquo;</a></li>--%>
-            <%--</ul>--%>
         </div>
 
         <div class="col-md-3 col-sm-offset-1 blog-sidebar">
             <div class="am-panel-group" style="
                     <%
-                        User user = (User)(session.getAttribute("user"));
-                        int interfaceId = user.getInterfaceId();
+                        //控制是否显示guideline
+                        Interface inter = (Interface)session.getAttribute("inter");
+                        int interfaceId = inter.getInterfaceId();
                         switch(interfaceId){
                             case 1: case 3: case 4: case 6: case 7: case 10:{
                                 out.println("display:none;");

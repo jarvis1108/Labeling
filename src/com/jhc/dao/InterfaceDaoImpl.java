@@ -1,5 +1,6 @@
 package com.jhc.dao;
 
+import com.jhc.entity.Interface;
 import com.jhc.tools.ConnDB;
 
 import java.sql.ResultSet;
@@ -26,21 +27,23 @@ public class InterfaceDaoImpl implements InterfaceDao {
         return flag;
     }
 
-    //获取分配给用户的界面序号
-    public int getInterfaceIdByUser(String username){
-        int flag = 0;
+    //获取分配给用户的界面
+    public Interface getInterface(String username){
+        Interface inter = new Interface();
         try{
             ConnDB.init();
             ResultSet rs = ConnDB.selectSql("select * from user_interface where username = " + username);
             while(rs.next()){
-                int interfaceId = rs.getInt("interfaceId");
-                return interfaceId;
+                inter.setUsername(username);
+                inter.setInterfaceId(rs.getInt("interfaceId"));
+                inter.setOffset(rs.getInt("offset"));
+                inter.setNumber(rs.getInt("number"));
             }
             ConnDB.closeConn();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return flag;
+        return inter;
     }
 
     //获取可用界面序号，成功返回序号，失败返回0

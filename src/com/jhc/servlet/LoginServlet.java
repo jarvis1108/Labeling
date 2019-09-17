@@ -14,6 +14,7 @@ import com.jhc.dao.InterfaceDao;
 import com.jhc.dao.InterfaceDaoImpl;
 import com.jhc.dao.UserDao;
 import com.jhc.dao.UserDaoImpl;
+import com.jhc.entity.Interface;
 import com.jhc.entity.User;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
@@ -33,9 +34,11 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         if(ud.login(username, password)){
-            int interfaceId = id.getInterfaceIdByUser(username);
-            session.setAttribute("interfaceId", interfaceId);
-            session.setAttribute("username", username);
+            Interface inter = id.getInterface(username);
+            User user = ud.getUser(username, password);
+
+            session.setAttribute("inter", inter);
+            session.setAttribute("user", user);
             request.getRequestDispatcher("/GetContentServlet").forward(request, response);
         }else{
             request.setAttribute("errorInfo","用户名或密码错误，请重试");

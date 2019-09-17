@@ -35,7 +35,7 @@ public class ResultDaoImpl implements ResultDao {
         return number;
     }
 
-    public int countResultsByUsername(int username){
+    public int countResultsByUsername(String  username){
         int number = -1;
         try{
             ConnDB.init();
