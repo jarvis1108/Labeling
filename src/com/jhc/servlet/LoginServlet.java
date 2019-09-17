@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jhc.dao.InterfaceDao;
+import com.jhc.dao.InterfaceDaoImpl;
 import com.jhc.dao.UserDao;
 import com.jhc.dao.UserDaoImpl;
 import com.jhc.entity.User;
@@ -27,11 +29,13 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         UserDao ud = new UserDaoImpl();
+        InterfaceDao id = new InterfaceDaoImpl();
+        HttpSession session = request.getSession();
 
         if(ud.login(username, password)){
-            User user = ud.getUser(username,password);
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            int interfaceId = id.getInterfaceIdByUser(username);
+            session.setAttribute("interfaceId", interfaceId);
+            session.setAttribute("username", username);
             request.getRequestDispatcher("/GetContentServlet").forward(request, response);
         }else{
             request.setAttribute("errorInfo","用户名或密码错误，请重试");

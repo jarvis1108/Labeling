@@ -118,19 +118,12 @@
             <button type="button" class="am-btn am-btn-block am-btn-danger" onclick="submit(1)">涉黄</button>
             <button type="button" class="am-btn am-btn-block am-btn-secondary" onclick="submit(0)">正常</button>
 
-
-            <%--<hr class="am-article-divider blog-hr">--%>
-            <%--<ul class="am-pagination blog-pagination">--%>
-                <%--<li class="am-pagination-prev"><a onclick="goLastPage()">&laquo; 上一篇</a></li>--%>
-                <%--<li class="am-pagination-next"><a onclick="goNextPage()">下一篇 &raquo;</a></li>--%>
-            <%--</ul>--%>
         </div>
 
         <div class="col-md-3 col-sm-offset-1 blog-sidebar">
             <div class="am-panel-group" style="
                     <%
-                        User user = (User)(session.getAttribute("user"));
-                        int interfaceId = user.getInterfaceId();
+                        int interfaceId = (int)session.getAttribute("interfaceId");
                         switch(interfaceId){
                             case 1: case 3: case 4: case 6: case 7: case 10:{
                                 out.println("display:none;");

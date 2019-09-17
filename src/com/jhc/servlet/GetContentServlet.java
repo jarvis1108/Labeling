@@ -21,7 +21,7 @@ public class GetContentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("content",content);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
-    }
+}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);

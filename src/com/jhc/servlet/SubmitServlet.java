@@ -27,7 +27,7 @@ public class SubmitServlet extends HttpServlet {
 
         String username = user.getUsername();
         int contentId = content.getContentId();
-        int InterfaceId = user.getInterfaceId();
+        int InterfaceId = 1;//TODO
         String result = request.getParameter("result");
 
         Result res = new Result();

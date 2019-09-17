@@ -1,4 +1,5 @@
 package com.jhc.entity;
+import java.sql.Timestamp;
 
 public class User {
     private String username;
@@ -9,7 +10,8 @@ public class User {
     private String profession;
     private String labeling_exp;
     private String reading_exp;
-    private int interfaceId;
+    private String account;
+    private Timestamp create_time;
 
     public String getUsername() {
         return username;
@@ -75,11 +77,19 @@ public class User {
         this.reading_exp = reading_exp;
     }
 
-    public int getInterfaceId() {
-        return interfaceId;
+    public String getAccount() {
+        return account;
     }
 
-    public void setInterfaceId(int interfaceId) {
-        this.interfaceId = interfaceId;
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public Timestamp getCreate_time() {
+        return create_time;
+    }
+
+    public void setCreate_time(Timestamp create_time) {
+        this.create_time = create_time;
     }
 }

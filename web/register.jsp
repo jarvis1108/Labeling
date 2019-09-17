@@ -55,7 +55,7 @@
     <div class="col-lg-6 col-md-8 col-sm-centered">
         <br>
         <h2>实验介绍</h2>
-        <p>欢迎参与由武汉大学人机交互与协作创新团队和阿里达摩院合作开展的网络小说涉黄文本标注实验。您一共需要阅读120个文本，并判断该文本是否有涉黄内容，预计总用时<b>2</b>小时，报酬<b>xx</b>元。<b>请您耐心阅读，仔细判断，若标注正确率过低，报酬会相应减少。</b><br>感谢您对本实验的支持。
+        <p>欢迎参与由武汉大学人机交互与协作创新团队和阿里达摩院合作开展的网络小说涉黄文本标注实验。您一共需要阅读120-180个文本，并判断该文本是否有涉黄内容，预计总用时<b> 2-3 </b>小时，报酬<b> 50 </b>元。<b class="info-alarm ">账号注册后48小时内有效。</b><b>请您耐心阅读，仔细判断，若标注正确率过低，报酬会相应减少。</b><br>感谢您对本实验的支持。
         </p>
         <hr>
         <br>
@@ -73,6 +73,19 @@
                 <label for="password">密码</label>
                 <input type="password" name="password" id="password" value="" class="am-form-field">
                 <p id="info-password" class="info-alarm"></p>
+            </div>
+
+            <h2>收款信息</h2>
+            <div id="form-account">
+                <label for="account">支付宝账号</label>
+                <input type="text" name="account" id="account" value="" class="am-form-field">
+                <p id="info-account" class="info-alarm"></p>
+            </div>
+            <br>
+            <div id="form-account-confirm">
+                <label for="accountc_onfirm">确认支付宝账号</label>
+                <input type="text" name="account_confirm" id="accountc_onfirm" value="" class="am-form-field" onpaste="return false">
+                <p id="info-account-confirm" class="info-alarm"></p>
             </div>
 
             <h2>背景调查</h2>
@@ -203,6 +216,37 @@
         return true;
     }
 
+    function checkAccount(){
+        var accountVal = $('#account').val();
+        if(accountVal == ''){
+            $('#form-account').removeClass().addClass('am-form-error');
+            $('#info-account').html('请填写接收报酬的支付宝账号');
+            return false;
+        }
+        $('#form-account').removeClass('am-form-error').addClass('am-form-success');
+        $('#info-account').html('');
+        return true;
+    }
+
+    function checkAccountConfirm(){
+        var accountVal = $('#account').val();
+        var accountConfirmVal = $('#accountc_onfirm').val();
+        if(accountConfirmVal == ''){
+            $('#form-account-confirm').removeClass().addClass('am-form-error');
+            $('#info-account-confirm').html('请再次输入支付宝账号');
+            return false;
+        }
+        if(accountVal != accountConfirmVal){
+            $('#form-account-confirm').removeClass().addClass('am-form-error');
+            $('#info-account-confirm').html('两次账号输入不一致');
+            return false;
+        }
+        $('#form-account-confirm').removeClass('am-form-error').addClass('am-form-success');
+        $('#info-account-confirm').html('');
+        return true;
+
+    }
+
     function checkSex() {
         var sexVal = $('input:radio[name="sex"]:checked').val();
         if (sexVal == null) {
@@ -264,7 +308,7 @@
     }
 
     function checkForm(){
-        if(checkUsername() && checkPassword() && checkSex() && checkAge() && checkEducation() && checkProfession() && checkLabelingExp() && checkReadingExp()){
+        if(checkUsername() && checkPassword() && checkSex() && checkAge() && checkEducation() && checkProfession() && checkLabelingExp() && checkReadingExp() && checkAccountConfirm() && checkAccount()){
             $('#form-register').submit();
         }
     }
@@ -290,6 +334,15 @@
         $('#profession').blur(function () {
             return checkProfession();
         });
+
+        $('#account').blur(function () {
+            return checkAccount();
+        });
+
+        $('#accountc_onfirm').blur(function () {
+            return checkAccountConfirm();
+        });
+
 
     });
 

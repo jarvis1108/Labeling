@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -31,9 +33,8 @@ public class RegisterServlet extends HttpServlet {
         String profession = request.getParameter("profession");
         String labeling_exp = request.getParameter("labeling_exp");
         String reading_exp = request.getParameter("reading_exp");
-        //获取可用的界面类型
-        InterfaceDao id = new InterfaceDaoImpl();
-        int interfaceId = id.getAvailableInterface();
+        String account = request.getParameter("account");
+        Timestamp create_time = new Timestamp(new Date().getTime());
 
         User user = new User();
         user.setUsername(username);
@@ -44,20 +45,31 @@ public class RegisterServlet extends HttpServlet {
         user.setProfession(profession);
         user.setLabeling_exp(labeling_exp);
         user.setReading_exp(reading_exp);
-        user.setInterfaceId(interfaceId);
+        user.setAccount(account);
+        user.setCreate_time(create_time);
 
         UserDao ud = new UserDaoImpl();
+        InterfaceDao id = new InterfaceDaoImpl();
+        HttpSession session = request.getSession();
 
+        //用户注册
         if(ud.register(user)){
-            user = ud.getUser(user.getUsername(),user.getPassword());
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
+            session.setAttribute("username", username);
         }else{
             request.setAttribute("errorInfo","该手机号码已注册，请直接登录");
             request.getRequestDispatcher("/login.jsp").forward(request, response);
-
         }
+
+        //为新用户分配界面
+        if(id.allocateInterfaceToUser(username)){
+            int interfaceId = id.getInterfaceIdByUser(username);
+            session.setAttribute("interfaceId", interfaceId);
+            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
+        }else{
+            request.setAttribute("errorInfo","本次实验已结束，谢谢");
+            request.getRequestDispatcher("/login.jsp").forward(request, response);
+        }
+
     }
 
 }
