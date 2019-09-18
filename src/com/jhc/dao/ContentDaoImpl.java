@@ -9,7 +9,26 @@ import java.util.List;
 
 public class ContentDaoImpl implements ContentDao {
 
-    //获取所有待标注文本
+    //获取文本的敏感词集合
+    public List<String> getWordList(String contentdId){
+        List<String> list = new ArrayList<String>();
+        String str;
+        try {
+            ConnDB.init();
+            ResultSet rs = ConnDB.selectSql("select content from content_word where probability > 0.4 and substring_index(wordId,'_',1) =" + contentdId);
+            while(rs.next()){ ;
+                str = rs.getString("content");
+                list.add(str);
+            }
+            ConnDB.closeConn();
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //获取所有文本
     public List<Content> getContentAll(int offset, int num) {
         List<Content> list = new ArrayList<Content>();
         try {
@@ -20,6 +39,7 @@ public class ContentDaoImpl implements ContentDao {
                 content.setContentId(rs.getString("contentId"));
                 content.setProbability(rs.getString("probability"));
                 content.setContent(rs.getString("content"));
+                content.setWordList(getWordList(rs.getString("contentId")));
                 list.add(content);
             }
             ConnDB.closeConn();
@@ -30,32 +50,50 @@ public class ContentDaoImpl implements ContentDao {
         return null;
     }
 
-    //获取具有context变量的混合文本
-    public List<Content> getContentMix(int offset, int num){
-        List<Content> contentList = new ArrayList<Content>();
-        List<Content> sentList = new ArrayList<Content>();
-        List<Content> resList = new ArrayList<Content>();
-        //获取文本
-        contentList = getContentAll(offset, num);
+    //获取一条混合文本（单句/单句+前后句/段落 1:1:1 ）
+    public Content getContentMix(int interOffset,int userOffset){
+        Content content = new Content();
+        Content res = new Content();
+        int offset = interOffset + userOffset;
 
-//        ConnDB.init();
-        //获取文本的最敏感句
-        for(Content cont :contentList){
-            Content sent = getSent(cont.getContentId());
-            sentList.add(sent);
+        //120-180获取文本
+        if(userOffset>=120){
+            content = getContent(offset-120);
+            return content;
         }
-        //获取文本的最敏感句及前后句
-        for(Content cont :contentList){
-            Content sent = getSentWithNeibor(cont.getContentId());
-            resList.add(sent);
+        //60-119获取文本的最敏感句及前后句
+        else if(userOffset>=60 && userOffset<120){
+            content = getContent(offset-60);
+            res = getSentWithNeibor(content.getContentId());
+            return res;
         }
-//        ConnDB.closeConn();
+        //0-59获取文本的最敏感句
+        else if(userOffset<60){
+            content = getContent(offset);
+            res = getSent(content.getContentId());
+            return res;
+        }
+        return res;
+    }
 
-
-        //混合（单句/单句+前后句/段落 1:1:1 ）
-        resList.addAll(sentList);
-        resList.addAll(sentList);
-        return resList;
+    //获取一条文本
+    public Content getContent(int offset) {
+        Content content = new Content();
+        try {
+            ConnDB.init();
+            ResultSet rs = ConnDB.selectSql("select * from content_frag limit " + offset + ", " + 1);
+            while(rs.next()){
+                content.setContentId(rs.getString("contentId"));
+                content.setProbability(rs.getString("probability"));
+                content.setContent(rs.getString("content"));
+                content.setWordList(getWordList(rs.getString("contentId")));
+            }
+            ConnDB.closeConn();
+            return content;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     //获取文本的最敏感句
@@ -68,6 +106,7 @@ public class ContentDaoImpl implements ContentDao {
                 sent.setContentId(rs.getString("sentId"));
                 sent.setProbability(rs.getString("probability"));
                 sent.setContent(rs.getString("content"));
+                sent.setWordList(getWordList(contentdId));
             }
             ConnDB.closeConn();
             return sent;
@@ -81,7 +120,6 @@ public class ContentDaoImpl implements ContentDao {
     //合并句子内容，保留最敏感句Id
     private Content getSentWithNeibor(String contentdId){
         List<Content> list = new ArrayList<Content>();
-        Content res = new Content();
         //获取文本的最敏感句序号
         Content sent = getSent(contentdId);
         int sentIndex = Integer.parseInt(sent.getContentId().split("s")[1]);
@@ -107,33 +145,12 @@ public class ContentDaoImpl implements ContentDao {
             e.printStackTrace();
         }
 
+        sent.setContent("");
         for(Content cont : list){
-            res.setContent(res.getContent() + cont.getContent());
+            sent.setContent(sent.getContent() + cont.getContent());
         }
-        return res;
+        sent.setWordList(getWordList(contentdId));
+        return sent;
     }
-
-    //获取文本的词语集合
-    private List<Content> getWordList(String contentdId){
-        List<Content> list = new ArrayList<Content>();
-        try {
-            ConnDB.init();
-            ResultSet rs = ConnDB.selectSql("select * from content_word where substring_index(wordId,'_',1) =" + contentdId);
-            while(rs.next()){
-                Content content = new Content();
-                content.setContentId(rs.getString("wordId"));
-                content.setProbability(rs.getString("probability"));
-                content.setContent(rs.getString("content"));
-                list.add(content);
-            }
-            ConnDB.closeConn();
-            return list;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    //
 
 }

@@ -23,40 +23,51 @@ public class GetContentServlet extends HttpServlet {
         Interface inter = (Interface)session.getAttribute("inter");
         User user = (User)session.getAttribute("user");
 
-        int offset = inter.getOffset();
+        int interOffset = inter.getOffset();
         int number = inter.getNumber();
 
         ContentDao td = new ContentDaoImpl();
-        List<Content> contentList = new ArrayList<>();
-
-        //TODO：context
-        int interfaceId = inter.getInterfaceId();
-        switch (interfaceId){
-            case 4: case 7: case 9: case 10: case 12: case 13: case 14:{
-                contentList = td.getContentMix(offset, number);
-                break;
-            }
-            default:{
-                contentList = td.getContentAll(offset, number);
-                break;
-            }
-        }
+        Content content = new Content();
 
         //获取下一页内容索引
         ResultDao rd = new ResultDaoImpl();
         String username = user.getUsername();
-        int contentIndex = rd.countResultsByUsername(username);
+        int userOffset = rd.countResultsByUsername(username);
+        int contentIndex = userOffset;
         int contentTotal = number;
 
+        //context
+        int interfaceId = inter.getInterfaceId();
+        switch (interfaceId){
+            case 4: case 7: case 9: case 10: case 12: case 13: case 14:{
+                content = td.getContentMix(interOffset,userOffset);
+                break;
+            }
+            default:{
+                content = td.getContent(interOffset + userOffset);
+                break;
+            }
+        }
+
+        //highlight
+        boolean highlight = false;
+        switch (interfaceId){
+            case 1: case 5: case 6: case 7: case 11: case 12: case 14:{
+                highlight = true;
+                break;
+            }
+            default:{ break;}
+        }
+
         if(contentIndex < contentTotal){
-            session.setAttribute("contentList",contentList);
+            session.setAttribute("content",content);
+            session.setAttribute("highlight",highlight);
             session.setAttribute("contentIndex",contentIndex);
             session.setAttribute("contentTotal",contentTotal);
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         }else {
             request.getRequestDispatcher("/thanks.jsp").forward(request, response);
         }
-
 }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

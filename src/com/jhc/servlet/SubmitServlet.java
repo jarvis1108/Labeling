@@ -24,9 +24,8 @@ public class SubmitServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
         Interface inter = (Interface)session.getAttribute("inter");
-        List<Content> contentList = (List<Content>)session.getAttribute("contentList");
+        Content content = (Content)session.getAttribute("content");
         int contentIndex = (int)session.getAttribute("contentIndex");
-        Content content = contentList.get(contentIndex);
 
         String username = user.getUsername();
         int InterfaceId = inter.getInterfaceId();

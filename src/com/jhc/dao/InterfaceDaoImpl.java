@@ -15,10 +15,11 @@ public class InterfaceDaoImpl implements InterfaceDao {
         int number = this.getUserPageByInterfaceId(interfaceId);
         int userCurrent = this.countUsersByInterfaceId(interfaceId);
         int offset = 0;
+        //validation
         if(userCurrent < 10){
             offset = userCurrent * number;
         }else{
-            //对具有validation变量的接口，需要重复分配内容
+            //对具有validation变量的界面，需要给用户重复分配内容
             offset = (userCurrent - 10) * number;
         }
 

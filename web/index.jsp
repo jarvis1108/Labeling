@@ -5,6 +5,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.SplittableRandom" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -16,8 +17,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="renderer" content="webkit">
         <meta http-equiv="Cache-Control" content="no-siteapp"/>
-        <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+        <link rel="alternate icon" type="image/png" href="assets/i/HCI Logo.png">
         <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+        <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
 
         <style>
             @media only screen and (min-width: 1200px) {
@@ -47,21 +49,6 @@
 
             .page-total{
                 font-size: 2.4rem;
-            }
-
-            /* highlight */
-            .blog-meta {
-                font-size: 14px;
-                margin: 10px 0 20px 0;
-                color: #222;
-            }
-
-            .blog-meta a {
-                color: #27ae60;
-            }
-
-            .blog-pagination a {
-                font-size: 1.4rem;
             }
 
             .blog-team li {
@@ -122,11 +109,10 @@
             <article class="blog-main">
                 <div class="am-g blog-content">
                     <div class="col-sm-12">
-                        <p class="text-content">
+                        <p id="text-content">
                             <%
                                 String text = "";
-                                List<Content> contentList = (List<Content>)(session.getAttribute("contentList"));
-                                Content content = contentList.get(contentIndex);
+                                Content content = (Content)session.getAttribute("content");
                                 text = content.getContent().replace(" ","").replace("null","");
                                 out.println(text);
                             %>
@@ -176,7 +162,6 @@
     <script>
 
         function submit(result){
-
             var myForm = document.createElement("form");
             myForm.method = "post";
             myForm.action = "SubmitServlet";
@@ -190,6 +175,20 @@
             myForm.submit();
             document.body.removeChild(myForm);
         }
+
+        //highlight
+        $(function (){
+            <%
+                  boolean highlight = (boolean)session.getAttribute("highlight");
+                  if(highlight){
+                      List<String> wordList = content.getWordList();
+                      for(String word : wordList){
+                          out.println("var txt = document.getElementById(\"text-content\").innerHTML;");
+                          out.println("document.getElementById(\"text-content\").innerHTML = txt.replace(\"" + word + "\",\"" + "<span style='color:#dd514c'>"+ word +"</span>\");");
+                      }
+                  }
+            %>
+        });
 
     </script>
     </body>
