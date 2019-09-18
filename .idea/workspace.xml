@@ -7,25 +7,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac67b274-905c-4914-b759-7a80f2d914aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/error.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/my.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/thanks.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ContentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ContentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ContentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ContentDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Content.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Result.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/second.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/third.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/entity/Content.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/entity/Content.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/entity/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ContentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ContentDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ContentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ContentDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Content.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Content.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/second.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/third.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/my.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,30 +101,32 @@
     <session id="1008656689">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="93" />
+          <entry key="class" value="2" />
+          <entry key="java" value="121" />
           <entry key="js" value="1" />
-          <entry key="jsp" value="24" />
+          <entry key="jsp" value="29" />
           <entry key="text" value="2" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
+          <entry key="CLASS" value="2" />
           <entry key="Database Element" value="2" />
-          <entry key="JAVA" value="93" />
-          <entry key="JSP" value="24" />
+          <entry key="JAVA" value="121" />
+          <entry key="JSP" value="29" />
           <entry key="JavaScript" value="1" />
           <entry key="XML" value="3" />
         </counts>
@@ -113,17 +134,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="45" />
-          <entry key="java" value="6609" />
-          <entry key="jsp" value="3146" />
-          <entry key="txt" value="55" />
+          <entry key="java" value="8969" />
+          <entry key="jsp" value="3287" />
+          <entry key="txt" value="67" />
           <entry key="xml" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6609" />
-          <entry key="JSP" value="3146" />
-          <entry key="PLAIN_TEXT" value="100" />
+          <entry key="JAVA" value="8969" />
+          <entry key="JSP" value="3287" />
+          <entry key="PLAIN_TEXT" value="112" />
           <entry key="XML" value="37" />
         </counts>
       </usages-collector>
@@ -134,8 +155,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+            <state relative-caret-position="171">
+              <caret line="123" column="43" lean-forward="true" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -143,8 +164,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="12">
+              <caret line="44" column="6" lean-forward="true" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Content.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -152,8 +182,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+            <state relative-caret-position="290">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,37 +192,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/register.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="250" column="21" lean-forward="true" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="64" />
+            <state relative-caret-position="342">
+              <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/my.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="199" column="47" lean-forward="true" selection-start-line="199" selection-start-column="47" selection-end-line="199" selection-end-column="47" />
+            <state relative-caret-position="426">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/User.java">
+        <entry file="file://$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="-277">
+              <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java">
+        <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+            <state relative-caret-position="76">
+              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -224,31 +260,32 @@
         <option value="$PROJECT_DIR$/src/com/jhc/dao/TextDaoImpl.java" />
         <option value="$PROJECT_DIR$/web/second.jsp" />
         <option value="$PROJECT_DIR$/web/third.jsp" />
-        <option value="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" />
         <option value="$PROJECT_DIR$/web/Register.jsp" />
         <option value="$PROJECT_DIR$/src/com/jhc/entity/Text.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/servlet/GetallServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/entity/Interface.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDao.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/ResultDao.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/web/error.jsp" />
+        <option value="$PROJECT_DIR$/web/thanks.jsp" />
+        <option value="$PROJECT_DIR$/web/my.jsp" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/entity/Result.java" />
+        <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/src/com/jhc/entity/User.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/dao/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/register.jsp" />
-        <option value="$PROJECT_DIR$/src/com/jhc/entity/Interface.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDao.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/ResultDao.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" />
-        <option value="$PROJECT_DIR$/web/error.jsp" />
-        <option value="$PROJECT_DIR$/web/thanks.jsp" />
+        <option value="$PROJECT_DIR$/src/com/jhc/entity/Content.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/my.jsp" />
+        <option value="$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java" />
       </list>
     </option>
   </component>
@@ -268,7 +305,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="1705" />
-    <option name="height" value="1409" />
+    <option name="height" value="1410" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -276,8 +313,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,13 +368,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568744495239" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568806395085" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -460,7 +497,9 @@
       <workItem from="1567563113696" duration="12242000" />
       <workItem from="1567594098162" duration="3503000" />
       <workItem from="1568595876334" duration="37639000" />
-      <workItem from="1568682959438" duration="33289000" />
+      <workItem from="1568682959438" duration="33456000" />
+      <workItem from="1568769153844" duration="11847000" />
+      <workItem from="1568791083035" duration="12013000" />
     </task>
     <task id="LOCAL-00001" summary="allocate interface">
       <created>1568714949318</created>
@@ -476,17 +515,31 @@
       <option name="project" value="LOCAL" />
       <updated>1568739029653</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init">
+      <created>1568744583758</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1568744583758</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add page">
+      <created>1568744611059</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1568744611059</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86673000" />
+    <option name="totallyTimeSpent" value="110700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.80368906" visible="true" weight="0.1971058" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.80368906" visible="true" weight="0.2010978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -496,7 +549,7 @@
       <window_info id="Web" order="7" sideWeight="0.19631094" side_tool="true" weight="0.19510978" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930514" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23665659" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33937562" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.499501" weight="0.35045317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -563,25 +616,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="allocate interface" />
     <MESSAGE value="allocate content" />
-    <option name="LAST_COMMIT_MESSAGE" value="allocate content" />
+    <MESSAGE value="init" />
+    <MESSAGE value="add page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="request" />
         <watch expression="status" />
+        <watch expression="content.content" />
+        <watch expression="content.content" language="JAVA" />
+        <watch expression="sentList" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/jhc/filter/EncodingFilter.java" />
-    <entry file="file://$PROJECT_DIR$/web/third.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="122" column="136" lean-forward="true" selection-start-line="122" selection-start-column="136" selection-end-line="122" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/third.jsp" />
     <entry file="das://45ccc6dd-268e-49a4-b512-8ea59008b37b/schema/hci/table/text">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -596,13 +648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/second.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1596">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/web/second.jsp" />
     <entry file="file://$PROJECT_DIR$/web/assets/js/jquery-3.4.1.slim.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -620,10 +666,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java">
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/InterfaceDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="63" lean-forward="true" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ResultDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/thanks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/my.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="199" column="47" lean-forward="true" selection-start-line="199" selection-start-column="47" selection-end-line="199" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1007">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Tomcat 8.5/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
         </state>
       </provider>
     </entry>
@@ -637,17 +725,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/InterfaceDao.java">
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="63" lean-forward="true" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        <state relative-caret-position="703">
+          <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="20" column="61" lean-forward="true" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-223">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+        <state relative-caret-position="-128">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#189#190#0" expanded="true" />
             <element signature="e#220#221#0" expanded="true" />
@@ -669,115 +804,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Content.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ResultDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="37" column="12" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1043#1052#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/thanks.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="12">
+          <caret line="44" column="6" lean-forward="true" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
+        <state relative-caret-position="442">
           <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -785,17 +821,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/User.java">
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/entity/Content.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-277">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/InterfaceDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="69" lean-forward="true" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+        <state relative-caret-position="290">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -804,29 +867,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        <state relative-caret-position="171">
+          <caret line="123" column="43" lean-forward="true" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/jhc/dao/ContentDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="250" column="21" lean-forward="true" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/my.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="199" column="47" lean-forward="true" selection-start-line="199" selection-start-column="47" selection-end-line="199" selection-end-column="47" />
+        <state relative-caret-position="426">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

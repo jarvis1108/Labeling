@@ -3,7 +3,7 @@ package com.jhc.entity;
 public class Result {
     private int resultId;
     private String username;
-    private int contentId;
+    private String contentId;
     private int interfaceId;
     private String result;
 
@@ -23,11 +23,11 @@ public class Result {
         this.username = username;
     }
 
-    public int getContentId() {
+    public String getContentId() {
         return contentId;
     }
 
-    public void setContentId(int contentId) {
+    public void setContentId(String contentId) {
         this.contentId = contentId;
     }
 

@@ -11,7 +11,8 @@ public class User {
     private String labeling_exp;
     private String reading_exp;
     private String account;
-    private Timestamp create_time;
+    private Timestamp finish_time;
+
 
     public String getUsername() {
         return username;
@@ -85,11 +86,11 @@ public class User {
         this.account = account;
     }
 
-    public Timestamp getCreate_time() {
-        return create_time;
+    public Timestamp getFinish_time() {
+        return finish_time;
     }
 
-    public void setCreate_time(Timestamp create_time) {
-        this.create_time = create_time;
+    public void setFinish_time(Timestamp create_time) {
+        this.finish_time = create_time;
     }
 }

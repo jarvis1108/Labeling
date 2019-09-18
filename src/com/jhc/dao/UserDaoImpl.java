@@ -2,6 +2,7 @@ package com.jhc.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import com.jhc.entity.User;
 import com.jhc.tools.ConnDB;
@@ -11,8 +12,8 @@ public class UserDaoImpl implements UserDao{
     public boolean register(User user) {
         boolean flag = false;
         ConnDB.init();
-        int i = ConnDB.addUpdDel("insert into user(username, password, sex, age, education, profession, labeling_exp, reading_exp, account, create_time) " +
-                "values('"+user.getUsername()+"','"+user.getPassword()+ "','"+user.getSex()+ "','"+user.getAge()+ "','"+user.getEducation()+ "','"+user.getProfession()+ "','"+user.getLabeling_exp()+ "','"+user.getReading_exp()+"','"+user.getAccount()+"','"+user.getCreate_time()+"')");
+        int i = ConnDB.addUpdDel("insert into user(username, password, sex, age, education, profession, labeling_exp, reading_exp, account, finish_time) " +
+                "values('"+user.getUsername()+"','"+user.getPassword()+ "','"+user.getSex()+ "','"+user.getAge()+ "','"+user.getEducation()+ "','"+user.getProfession()+ "','"+user.getLabeling_exp()+ "','"+user.getReading_exp()+"','"+user.getAccount()+"','"+user.getFinish_time()+"')");
         if(i>0){
             flag = true;
         }
@@ -52,7 +53,7 @@ public class UserDaoImpl implements UserDao{
                 user.setLabeling_exp(rs.getString("labeling_exp"));
                 user.setReading_exp(rs.getString("reading_exp"));
                 user.setAccount(rs.getString("account"));
-                user.setCreate_time(rs.getTimestamp("create_time"));
+                user.setFinish_time(rs.getTimestamp("finish_time"));
             }
             ConnDB.closeConn();
         } catch (SQLException e) {
@@ -60,7 +61,6 @@ public class UserDaoImpl implements UserDao{
         }
         return user;
     }
-
 
 }
 

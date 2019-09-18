@@ -14,7 +14,13 @@ public class InterfaceDaoImpl implements InterfaceDao {
         int interfaceId = this.getAvailableInterface();
         int number = this.getUserPageByInterfaceId(interfaceId);
         int userCurrent = this.countUsersByInterfaceId(interfaceId);
-        int offset = userCurrent * number;
+        int offset = 0;
+        if(userCurrent < 10){
+            offset = userCurrent * number;
+        }else{
+            //对具有validation变量的接口，需要重复分配内容
+            offset = (userCurrent - 10) * number;
+        }
 
         ConnDB.init();
         int i = ConnDB.addUpdDel("insert into user_interface(username, interfaceId, offset, number) " +
@@ -23,7 +29,6 @@ public class InterfaceDaoImpl implements InterfaceDao {
             flag = true;
         }
         ConnDB.closeConn();
-
         return flag;
     }
 

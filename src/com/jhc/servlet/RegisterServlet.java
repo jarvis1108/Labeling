@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 @WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
@@ -35,7 +38,12 @@ public class RegisterServlet extends HttpServlet {
         String labeling_exp = request.getParameter("labeling_exp");
         String reading_exp = request.getParameter("reading_exp");
         String account = request.getParameter("account");
-        Timestamp create_time = new Timestamp(new Date().getTime());
+
+        //计算截止日期：注册后48小时
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DATE, 2);
+        Timestamp finish_time = new Timestamp(cal.getTime().getTime());
 
         User user = new User();
         user.setUsername(username);
@@ -47,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
         user.setLabeling_exp(labeling_exp);
         user.setReading_exp(reading_exp);
         user.setAccount(account);
-        user.setCreate_time(create_time);
+        user.setFinish_time(finish_time);
 
         UserDao ud = new UserDaoImpl();
         InterfaceDao id = new InterfaceDaoImpl();

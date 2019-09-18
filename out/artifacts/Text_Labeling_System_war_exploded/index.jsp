@@ -2,6 +2,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.jhc.entity.User" %>
 <%@ page import="com.jhc.entity.Interface" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -69,6 +72,11 @@
                 margin-bottom: 0;
             }
 
+            .am-icon-info-circle{
+                color: #636262;
+            }
+
+
         </style>
     </head>
     <body>
@@ -77,10 +85,20 @@
             <a href="http://hci.whu.edu.cn/">WHU HCI</a>
         </h1>
 
+        <%
+            User user = (User)session.getAttribute("user");
+            String username = user.getUsername();
+            String deadline = "";
+
+            Date finish_time =  new Date(user.getFinish_time().getTime());
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            deadline = sdf.format(finish_time);
+        %>
+
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
             <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li class="am-active"><a href="#">标注</a></li>
-                <li><a href="#">我的</a></li>
+                <li class="am-active"><a href="index.jsp">标注</a></li>
+                <li><a><%=username %></a></li>
             </ul>
         </div>
     </header>
@@ -109,7 +127,7 @@
                                 String text = "";
                                 List<Content> contentList = (List<Content>)(session.getAttribute("contentList"));
                                 Content content = contentList.get(contentIndex);
-                                text = content.getContent().replace(" ","");
+                                text = content.getContent().replace(" ","").replace("null","");
                                 out.println(text);
                             %>
                         </p>
@@ -120,6 +138,9 @@
             <hr class="am-article-divider blog-hr">
             <button type="button" class="am-btn am-btn-block am-btn-danger" onclick="submit(1)">涉黄</button>
             <button type="button" class="am-btn am-btn-block am-btn-secondary" onclick="submit(0)">正常</button>
+
+            <br>
+            <p><span class="am-icon-info-circle"></span> 请在 <a><%=deadline%></a> 前完成标注</p>
 
         </div>
 

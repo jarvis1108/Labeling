@@ -27,7 +27,20 @@ public class GetContentServlet extends HttpServlet {
         int number = inter.getNumber();
 
         ContentDao td = new ContentDaoImpl();
-        List<Content> contentList = td.getContentAll(offset, number);
+        List<Content> contentList = new ArrayList<>();
+
+        //TODO：context
+        int interfaceId = inter.getInterfaceId();
+        switch (interfaceId){
+            case 4: case 7: case 9: case 10: case 12: case 13: case 14:{
+                contentList = td.getContentMix(offset, number);
+                break;
+            }
+            default:{
+                contentList = td.getContentAll(offset, number);
+                break;
+            }
+        }
 
         //获取下一页内容索引
         ResultDao rd = new ResultDaoImpl();
