@@ -5,6 +5,7 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.DateFormat" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.SplittableRandom" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -16,8 +17,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="renderer" content="webkit">
         <meta http-equiv="Cache-Control" content="no-siteapp"/>
-        <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+        <link rel="alternate icon" type="image/png" href="assets/i/HCI Logo.png">
         <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+        <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
 
         <style>
             @media only screen and (min-width: 1200px) {
@@ -49,21 +51,6 @@
                 font-size: 2.4rem;
             }
 
-            /* highlight */
-            .blog-meta {
-                font-size: 14px;
-                margin: 10px 0 20px 0;
-                color: #222;
-            }
-
-            .blog-meta a {
-                color: #27ae60;
-            }
-
-            .blog-pagination a {
-                font-size: 1.4rem;
-            }
-
             .blog-team li {
                 padding: 4px;
             }
@@ -87,12 +74,17 @@
 
         <%
             User user = (User)session.getAttribute("user");
-            String username = user.getUsername();
+            String username = "";
             String deadline = "";
-
-            Date finish_time =  new Date(user.getFinish_time().getTime());
-            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            deadline = sdf.format(finish_time);
+            //检查用户登录情况
+            if(null != user){
+                username = user.getUsername();
+                Date finish_time =  new Date(user.getFinish_time().getTime());
+                DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                deadline = sdf.format(finish_time);
+            } else {
+                response.sendRedirect("/Labeling/login.jsp");
+            }
         %>
 
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
@@ -104,9 +96,15 @@
     </header>
 
     <%
-        int contentIndex = (int)session.getAttribute("contentIndex");
+        int contentIndex = 0;
+        int contentTotal = 0;
+        if(null != session.getAttribute("contentIndex")){
+            contentIndex = (int)session.getAttribute("contentIndex");
+        }
         int pageNum = contentIndex + 1;
-        int contentTotal = (int)session.getAttribute("contentTotal");
+        if(null != session.getAttribute("contentTotal")){
+            contentTotal = (int)session.getAttribute("contentTotal");
+        }
     %>
 
     <div class="am-g am-g-fixed blog-g-fixed">
@@ -122,12 +120,13 @@
             <article class="blog-main">
                 <div class="am-g blog-content">
                     <div class="col-sm-12">
-                        <p class="text-content">
+                        <p id="text-content">
                             <%
                                 String text = "";
-                                List<Content> contentList = (List<Content>)(session.getAttribute("contentList"));
-                                Content content = contentList.get(contentIndex);
-                                text = content.getContent().replace(" ","").replace("null","");
+                                Content content = (Content)session.getAttribute("content");
+                                if(null != content){
+                                    text = content.getContent().replace(" ","").replace("null","");
+                                }
                                 out.println(text);
                             %>
                         </p>
@@ -149,13 +148,16 @@
                     <%
                         //控制是否显示guideline
                         Interface inter = (Interface)session.getAttribute("inter");
-                        int interfaceId = inter.getInterfaceId();
+                        int interfaceId = 0;
+                        if(null != inter){
+                            interfaceId = inter.getInterfaceId();
+                        }
                         switch(interfaceId){
                             case 1: case 3: case 4: case 6: case 7: case 10:{
                                 out.println("display:none;");
                                 break;
                             }
-                            default: ;break;
+                            default: break;
                         }
                      %>
             ">
@@ -176,7 +178,6 @@
     <script>
 
         function submit(result){
-
             var myForm = document.createElement("form");
             myForm.method = "post";
             myForm.action = "SubmitServlet";
@@ -190,6 +191,23 @@
             myForm.submit();
             document.body.removeChild(myForm);
         }
+
+        //highlight
+        $(function (){
+            <%
+                  boolean highlight = false;
+                  if(null != session.getAttribute("highlight")){
+                      highlight = (boolean)session.getAttribute("highlight");
+                  }
+                  if(highlight){
+                      List<String> wordList = content.getWordList();
+                      for(String word : wordList){
+                          out.println("var txt = document.getElementById(\"text-content\").innerHTML;");
+                          out.println("document.getElementById(\"text-content\").innerHTML = txt.replace(\"" + word + "\",\"" + "<span style='color:#dd514c'>"+ word +"</span>\");");
+                      }
+                  }
+            %>
+        });
 
     </script>
     </body>

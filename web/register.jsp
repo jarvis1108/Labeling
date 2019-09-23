@@ -55,7 +55,8 @@
     <div class="col-lg-6 col-md-8 col-sm-centered">
         <br>
         <h2>实验介绍</h2>
-        <p>欢迎参与由武汉大学人机交互与协作创新团队和阿里达摩院合作开展的网络小说涉黄文本标注实验。您一共需要阅读120-180个文本，并判断该文本是否有涉黄内容，预计总用时<b> 2-3 </b>小时，报酬<b> 50 </b>元。<b class="info-alarm ">账号注册后48小时内有效。</b><b>请您耐心阅读，仔细判断，若标注正确率过低，报酬会相应减少。</b><br>感谢您对本实验的支持。</p>
+        <p>欢迎参与由武汉大学人机交互与协作创新团队和阿里达摩院合作开展的网络小说涉黄文本标注实验。您一共需要阅读120-180个文本，并判断该文本是否有涉黄内容，预计总用时<b> 1-2 </b>小时，报酬<b> 50 </b>元。<b>请您耐心阅读，仔细判断，若标注正确率过低，报酬会相应减少。</b></p>
+        <p>本实验承诺，所收集的一切信息仅用于科学研究，请放心填写。有任何疑问请联系董同学（<a>dj_whu@163.com</a>）或樊同学（<a>18328446430</a>），感谢您的支持。</p>
         <hr>
         <br>
 
@@ -63,7 +64,8 @@
             <h2>用户注册</h2>
             <p>已有账户？<a href="/Labeling/login.jsp">点此登录</a></p>
             <div id="form-username">
-                <label for="username">手机</label>
+                <label for="username">用户名</label>
+                <p>请填写手机号。<b class="info-alarm ">账号注册后48小时内有效。</b></p>
                 <input type="text" name="username" id="username" value="" class="am-form-field">
                 <p id="info-username" class="info-alarm"></p>
             </div>
@@ -77,6 +79,7 @@
             <h2>收款信息</h2>
             <div id="form-account">
                 <label for="account">支付宝账号</label>
+                <p>实验报酬以支付宝转账方式支付，请确保正确填写。</p>
                 <input type="text" name="account" id="account" value="" class="am-form-field">
                 <p id="info-account" class="info-alarm"></p>
             </div>

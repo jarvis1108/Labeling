@@ -48,8 +48,10 @@
     <div class="col-lg-4 col-md-8 col-sm-centered">
         <br>
         <%
-            String errorInfo = "错误描述";
-            errorInfo = (String)session.getAttribute("errorInfo");
+            String errorInfo = "";
+            if(null != session.getAttribute("errorInfo")){
+                errorInfo = (String)session.getAttribute("errorInfo");
+            };
         %>
         <h2>抱歉，出错了。</h2>
         <p><%=errorInfo %></p>

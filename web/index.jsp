@@ -74,12 +74,17 @@
 
         <%
             User user = (User)session.getAttribute("user");
-            String username = user.getUsername();
+            String username = "";
             String deadline = "";
-
-            Date finish_time =  new Date(user.getFinish_time().getTime());
-            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            deadline = sdf.format(finish_time);
+            //检查用户登录情况
+            if(null != user){
+                username = user.getUsername();
+                Date finish_time =  new Date(user.getFinish_time().getTime());
+                DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                deadline = sdf.format(finish_time);
+            } else {
+                response.sendRedirect("/Labeling/login.jsp");
+            }
         %>
 
         <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
@@ -91,9 +96,15 @@
     </header>
 
     <%
-        int contentIndex = (int)session.getAttribute("contentIndex");
+        int contentIndex = 0;
+        int contentTotal = 0;
+        if(null != session.getAttribute("contentIndex")){
+            contentIndex = (int)session.getAttribute("contentIndex");
+        }
         int pageNum = contentIndex + 1;
-        int contentTotal = (int)session.getAttribute("contentTotal");
+        if(null != session.getAttribute("contentTotal")){
+            contentTotal = (int)session.getAttribute("contentTotal");
+        }
     %>
 
     <div class="am-g am-g-fixed blog-g-fixed">
@@ -113,7 +124,9 @@
                             <%
                                 String text = "";
                                 Content content = (Content)session.getAttribute("content");
-                                text = content.getContent().replace(" ","").replace("null","");
+                                if(null != content){
+                                    text = content.getContent().replace(" ","").replace("null","");
+                                }
                                 out.println(text);
                             %>
                         </p>
@@ -135,13 +148,16 @@
                     <%
                         //控制是否显示guideline
                         Interface inter = (Interface)session.getAttribute("inter");
-                        int interfaceId = inter.getInterfaceId();
+                        int interfaceId = 0;
+                        if(null != inter){
+                            interfaceId = inter.getInterfaceId();
+                        }
                         switch(interfaceId){
                             case 1: case 3: case 4: case 6: case 7: case 10:{
                                 out.println("display:none;");
                                 break;
                             }
-                            default: ;break;
+                            default: break;
                         }
                      %>
             ">
@@ -179,7 +195,10 @@
         //highlight
         $(function (){
             <%
-                  boolean highlight = (boolean)session.getAttribute("highlight");
+                  boolean highlight = false;
+                  if(null != session.getAttribute("highlight")){
+                      highlight = (boolean)session.getAttribute("highlight");
+                  }
                   if(highlight){
                       List<String> wordList = content.getWordList();
                       for(String word : wordList){

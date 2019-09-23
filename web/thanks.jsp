@@ -48,11 +48,15 @@
     <div class="col-lg-4 col-md-8 col-sm-centered">
         <br>
         <%
+            String username = "";
             User user = (User)session.getAttribute("user");
-            String username = user.getUsername();
+            if(null != user){
+                username = user.getUsername();
+            }
         %>
         <h2>谢谢, <%=username %></h2>
-        <p>您已完成所有的标注。我们将在核对无误后将报酬发放到您的收款账户中，请注意查收。</p>
+        <% //TODO: 转款日期%>
+        <p>非常感谢您的参与和支持！实验报酬将在标注结果检查后，于X月X日前转入您填写的支付宝账号。如有任何疑问，可咨询董同学（<a>dj_whu@163.com</a>）或樊同学（<a>18328446430</a>）。</p>
         <br>
         <hr>
         <p>© 2019 WHU HCI</p>
