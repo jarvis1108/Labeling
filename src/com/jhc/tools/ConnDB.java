@@ -3,9 +3,9 @@ package com.jhc.tools;
 import java.sql.*;
 
 public class ConnDB {
-    static String url = "jdbc:mysql://localhost:3306/hci?useSSL=false";
+    static String url = "jdbc:mysql://localhost:3306/Labeling?useSSL=false";
     static String username = "root";
-    static String password = "971108";
+    static String password = "Jhc19971108!";
     static Connection conn = null;
     static ResultSet rs = null;
     static PreparedStatement ps =null;

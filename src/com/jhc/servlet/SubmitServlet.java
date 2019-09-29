@@ -21,6 +21,10 @@ import java.util.List;
 @WebServlet(name = "Submit", value = "/Submit")
 public class SubmitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.setCharacterEncoding("UTF-8");
+        String highlight_text = request.getParameter("highlight_text");
+
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
         Interface inter = (Interface)session.getAttribute("inter");
@@ -32,14 +36,20 @@ public class SubmitServlet extends HttpServlet {
         String contentId = content.getContentId();
         String result = request.getParameter("result");
 
-        //处理中文乱码
-        String highlight_text = new String(request.getParameter("highlight_text").getBytes("iso-8859-1"),"utf-8");
+//        测试无效
+//        request.setCharacterEncoding("utf-8");
+//        response.setContentType("text/html;charset=utf-8");
+//        String highlight_text = request.getParameter("highlight_text");
+
+//        本地测试成功，但在部署到服务器后测试无效
+//        String highlight_text = new String(request.getParameter("highlight_text").getBytes("iso-8859-1"),"utf-8");
 
         Result res = new Result();
         res.setUsername(username);
         res.setContentId(contentId);
         res.setInterfaceId(InterfaceId);
-        res.setResult(result);        res.setHighlight_text(highlight_text);
+        res.setResult(result);
+        res.setHighlight_text(highlight_text);
 
         ResultDao rd = new ResultDaoImpl();
 
