@@ -39,8 +39,7 @@ public class SubmitServlet extends HttpServlet {
         res.setUsername(username);
         res.setContentId(contentId);
         res.setInterfaceId(InterfaceId);
-        res.setResult(result);
-        res.setHighlight_text(highlight_text);
+        res.setResult(result);        res.setHighlight_text(highlight_text);
 
         ResultDao rd = new ResultDaoImpl();
 

@@ -6,40 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac67b274-905c-4914-b759-7a80f2d914aa" name="Default Changelist" comment="user highlight">
-      <change afterPath="$PROJECT_DIR$/src/com/jhc/filter/EncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Text_Labeling_System_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Text_Labeling_System_war_exploded.xml" afterDir="false" />
+    <list default="true" id="ac67b274-905c-4914-b759-7a80f2d914aa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/InterfaceDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/InterfaceDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/entity/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/tools/ConnDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/classes/com/jhc/tools/ConnDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/dao/ResultDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/entity/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/entity/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/GetContentServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jhc/tools/ConnDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/InterfaceDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/InterfaceDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/dao/ResultDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/entity/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/GetContentServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/servlet/SubmitServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/tools/ConnDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/jhc/tools/ConnDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Text_Labeling_System_war_exploded/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,7 +101,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="45" />
-          <entry key="java" value="10068" />
+          <entry key="java" value="10090" />
           <entry key="jsp" value="5062" />
           <entry key="txt" value="159" />
           <entry key="xml" value="57" />
@@ -140,7 +109,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10068" />
+          <entry key="JAVA" value="10090" />
           <entry key="JSP" value="5062" />
           <entry key="PLAIN_TEXT" value="204" />
           <entry key="XML" value="57" />
@@ -175,8 +144,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+            <state relative-caret-position="361">
+              <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -407,7 +376,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569748850205" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569748984921" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -535,7 +504,7 @@
       <workItem from="1569223298221" duration="3005000" />
       <workItem from="1569396799263" duration="2005000" />
       <workItem from="1569671172434" duration="2885000" />
-      <workItem from="1569723998577" duration="19643000" />
+      <workItem from="1569723998577" duration="19893000" />
     </task>
     <task id="LOCAL-00001" summary="allocate interface">
       <created>1568714949318</created>
@@ -586,11 +555,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569226206432</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="user highlight">
+      <created>1569748924689</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569748924690</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147183000" />
+    <option name="totallyTimeSpent" value="147433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +578,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.80368906" visible="true" weight="0.21107784" />
@@ -615,8 +591,8 @@
       <window_info id="Web" order="7" sideWeight="0.19631094" side_tool="true" weight="0.19510978" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32930514" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2326284" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.499501" weight="0.35045317" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2326284" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.499501" visible="true" weight="0.35045317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.21248741" />
@@ -653,7 +629,8 @@
     <MESSAGE value="variable context" />
     <MESSAGE value="variable highlight" />
     <MESSAGE value="update info &amp; login check" />
-    <option name="LAST_COMMIT_MESSAGE" value="update info &amp; login check" />
+    <MESSAGE value="user highlight" />
+    <option name="LAST_COMMIT_MESSAGE" value="user highlight" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -910,8 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jhc/servlet/SubmitServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="32" column="55" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        <state relative-caret-position="361">
+          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
         </state>
       </provider>
     </entry>
