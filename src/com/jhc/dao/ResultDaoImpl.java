@@ -10,8 +10,8 @@ public class ResultDaoImpl implements ResultDao {
     public boolean submit(Result result){
         boolean flag = false;
         ConnDB.init();
-        int i = ConnDB.addUpdDel("insert into result(username, contentId, interfaceId, result) " +
-                "values('"+result.getUsername()+ "','"+result.getContentId()+ "','"+result.getInterfaceId()+ "','"+result.getResult()+ "')");
+        int i = ConnDB.addUpdDel("insert into result(username, contentId, interfaceId, result, highlight_text) " +
+                "values('"+result.getUsername()+ "','"+result.getContentId()+ "','"+result.getInterfaceId()+ "','"+result.getResult()+ "','"+result.getHighlight_text()+ "')");
         if(i>0){
             flag = true;
         }

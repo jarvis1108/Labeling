@@ -6,6 +6,7 @@ public class Result {
     private String contentId;
     private int interfaceId;
     private String result;
+    private String highlight_text;
 
     public int getResultId() {
         return resultId;
@@ -45,5 +46,13 @@ public class Result {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    public String getHighlight_text() {
+        return highlight_text;
+    }
+
+    public void setHighlight_text(String highlight_text) {
+        this.highlight_text = highlight_text;
     }
 }

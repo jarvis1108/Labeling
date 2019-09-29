@@ -17,7 +17,7 @@ import com.jhc.dao.UserDaoImpl;
 import com.jhc.entity.Interface;
 import com.jhc.entity.User;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
+@WebServlet(name = "Login", value = "/Login")
 public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 
             session.setAttribute("inter", inter);
             session.setAttribute("user", user);
-            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
+            request.getRequestDispatcher("/GetContent").forward(request, response);
         }else{
             request.setAttribute("errorInfo","用户名或密码错误，请重试");
             request.getRequestDispatcher("/login.jsp").forward(request, response);

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "GetContentServlet", value = "/GetContentServlet")
+@WebServlet(name = "GetContent", value = "/GetContent")
 public class GetContentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -39,7 +39,7 @@ public class GetContentServlet extends HttpServlet {
         //context
         int interfaceId = inter.getInterfaceId();
         switch (interfaceId){
-            case 4: case 7: case 9: case 10: case 12: case 13: case 14:{
+            case 4: case 7: case 9: case 10: case 12: case 13: case 14: case 15:{
                 content = td.getContentMix(interOffset,userOffset);
                 break;
             }
@@ -52,16 +52,27 @@ public class GetContentServlet extends HttpServlet {
         //highlight
         boolean highlight = false;
         switch (interfaceId){
-            case 1: case 5: case 6: case 7: case 11: case 12: case 14:{
+            case 1: case 5: case 6: case 7: case 11: case 12: case 14: case 15:{
                 highlight = true;
                 break;
             }
             default:{ break;}
         }
 
+        //guideline
+        boolean guideline = false;
+        switch(interfaceId){
+            case 2: case 5: case 8: case 9: case 11: case 12: case 13: case 15:{
+                guideline = true;
+                break;
+            }
+            default: break;
+        }
+
         if(contentIndex < contentTotal){
             session.setAttribute("content",content);
             session.setAttribute("highlight",highlight);
+            session.setAttribute("guideline",guideline);
             session.setAttribute("contentIndex",contentIndex);
             session.setAttribute("contentTotal",contentTotal);
             request.getRequestDispatcher("/index.jsp").forward(request, response);

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SubmitServlet", value = "/SubmitServlet")
+@WebServlet(name = "Submit", value = "/Submit")
 public class SubmitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -32,16 +32,20 @@ public class SubmitServlet extends HttpServlet {
         String contentId = content.getContentId();
         String result = request.getParameter("result");
 
+        //处理中文乱码
+        String highlight_text = new String(request.getParameter("highlight_text").getBytes("iso-8859-1"),"utf-8");
+
         Result res = new Result();
         res.setUsername(username);
         res.setContentId(contentId);
         res.setInterfaceId(InterfaceId);
         res.setResult(result);
+        res.setHighlight_text(highlight_text);
 
         ResultDao rd = new ResultDaoImpl();
 
         if(rd.submit(res)){
-            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
+            request.getRequestDispatcher("/GetContent").forward(request, response);
         }else{
             session.setAttribute("errorInfo","提交失败，请重试");
             request.getRequestDispatcher("/error.jsp").forward(request, response);

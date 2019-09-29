@@ -19,7 +19,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="alternate icon" type="image/png" href="assets/i/HCI Logo.png">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css"  href="assets/css/amazeui.min.css" />
     <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
     <style>
         .header {
@@ -60,7 +60,7 @@
         <hr>
         <br>
 
-        <form method="post" class="am-form" action="RegisterServlet" id="form-register">
+        <form method="post" class="am-form" action="Register" id="form-register">
             <h2>用户注册</h2>
             <p>已有账户？<a href="/Labeling/login.jsp">点此登录</a></p>
             <div id="form-username">

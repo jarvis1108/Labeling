@@ -18,7 +18,7 @@
         <meta name="renderer" content="webkit">
         <meta http-equiv="Cache-Control" content="no-siteapp"/>
         <link rel="alternate icon" type="image/png" href="assets/i/HCI Logo.png">
-        <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/amazeui.min.css"/>
         <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
 
         <style>
@@ -63,6 +63,10 @@
                 color: #636262;
             }
 
+            ::selection {
+                background-color: #f2e94f;
+            }
+
 
         </style>
     </head>
@@ -96,6 +100,7 @@
     </header>
 
     <%
+        //获取页码
         int contentIndex = 0;
         int contentTotal = 0;
         if(null != session.getAttribute("contentIndex")){
@@ -122,6 +127,7 @@
                     <div class="col-sm-12">
                         <p id="text-content">
                             <%
+                                //获取文本内容
                                 String text = "";
                                 Content content = (Content)session.getAttribute("content");
                                 if(null != content){
@@ -137,8 +143,8 @@
             <hr class="am-article-divider blog-hr">
             <button type="button" class="am-btn am-btn-block am-btn-danger" onclick="submit(1)">涉黄</button>
             <button type="button" class="am-btn am-btn-block am-btn-secondary" onclick="submit(0)">正常</button>
-
             <br>
+            <p><span class="am-icon-info-circle"></span> 若涉黄，请在文本中拖选出您的 <span style="color:#dd514c;"><b>判断依据</b></span></p>
             <p><span class="am-icon-info-circle"></span> 请在 <a><%=deadline%></a> 前完成标注</p>
 
         </div>
@@ -147,17 +153,12 @@
             <div class="am-panel-group" style="
                     <%
                         //控制是否显示guideline
-                        Interface inter = (Interface)session.getAttribute("inter");
-                        int interfaceId = 0;
-                        if(null != inter){
-                            interfaceId = inter.getInterfaceId();
+                        boolean guideline = false;
+                        if(null != session.getAttribute("guideline")){
+                            guideline = (boolean)session.getAttribute("guideline");
                         }
-                        switch(interfaceId){
-                            case 1: case 3: case 4: case 6: case 7: case 10:{
-                                out.println("display:none;");
-                                break;
-                            }
-                            default: break;
+                        if(!guideline){
+                            out.println("display:none;");
                         }
                      %>
             ">
@@ -178,21 +179,34 @@
     <script>
 
         function submit(result){
+
             var myForm = document.createElement("form");
             myForm.method = "post";
-            myForm.action = "SubmitServlet";
+            myForm.action = "Submit";
 
-            var myInput = document.createElement("input");
-            myInput.setAttribute("name", "result");
-            myInput.setAttribute("value", result);
-            myForm.appendChild(myInput);
+            var childResult = document.createElement("input");
+            childResult.setAttribute("type", "text");
+            childResult.setAttribute("name", "result");
+            childResult.setAttribute("value", result);
+            myForm.appendChild(childResult);
 
-            document.body.appendChild(myForm);
-            myForm.submit();
-            document.body.removeChild(myForm);
+            var childHighlight = document.createElement("input");
+            var highlight_text = window.getSelection() + "";
+            childHighlight.setAttribute("type", "text");
+            childHighlight.setAttribute("name", "highlight_text");
+            childHighlight.setAttribute("value", highlight_text);
+            myForm.appendChild(childHighlight);
+
+            if(1 == result && ""==highlight_text){
+                alert("请在文本中拖选出您的判断依据");
+            } else {
+                document.body.appendChild(myForm);
+                myForm.submit();
+                document.body.removeChild(myForm);
+            }
         }
 
-        //highlight
+        //highlight：控制敏感词样式
         $(function (){
             <%
                   boolean highlight = false;

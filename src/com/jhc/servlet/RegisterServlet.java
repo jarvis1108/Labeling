@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-@WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
+@WebServlet(name = "Register", value = "/Register")
 public class RegisterServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,7 +73,7 @@ public class RegisterServlet extends HttpServlet {
         if(id.allocateInterfaceToUser(username)){
             Interface inter = id.getInterface(username);
             session.setAttribute("inter", inter);
-            request.getRequestDispatcher("/GetContentServlet").forward(request, response);
+            request.getRequestDispatcher("/GetContent").forward(request, response);
         }else{
             request.setAttribute("errorInfo","本次实验已经结束，谢谢");
             request.getRequestDispatcher("/login.jsp").forward(request, response);

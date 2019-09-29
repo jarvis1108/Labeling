@@ -18,7 +18,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="alternate icon" type="image/png" href="assets/i/HCI Logo.png">
-    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/amazeui.min.css" />
     <script src="assets/js/jquery-3.4.1.slim.min.js"></script>
     <style>
         .header {
@@ -68,7 +68,7 @@
             }
         %>
 
-        <form method="post" class="am-form" action="LoginServlet">
+        <form method="post" class="am-form" action="Login">
             <h2>用户登录</h2>
             <div id="form-username">
                 <label for="username">手机</label>
