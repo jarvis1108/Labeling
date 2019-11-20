@@ -12,8 +12,8 @@ public class UserDaoImpl implements UserDao{
     public boolean register(User user) {
         boolean flag = false;
         ConnDB.init();
-        int i = ConnDB.addUpdDel("insert into user(username, password, sex, age, education, profession, labeling_exp, reading_exp, account, finish_time) " +
-                "values('"+user.getUsername()+"','"+user.getPassword()+ "','"+user.getSex()+ "','"+user.getAge()+ "','"+user.getEducation()+ "','"+user.getProfession()+ "','"+user.getLabeling_exp()+ "','"+user.getReading_exp()+"','"+user.getAccount()+"','"+user.getFinish_time()+"')");
+        int i = ConnDB.addUpdDel("insert into user(username, password, sex, age, education, profession, labeling_exp, reading_exp, account, finish_time, valid) " +
+                "values('"+user.getUsername()+"','"+user.getPassword()+ "','"+user.getSex()+ "','"+user.getAge()+ "','"+user.getEducation()+ "','"+user.getProfession()+ "','"+user.getLabeling_exp()+ "','"+user.getReading_exp()+"','"+user.getAccount()+"','"+user.getFinish_time()+"','"+user.getValid()+"')");
         if(i>0){
             flag = true;
         }
@@ -54,12 +54,24 @@ public class UserDaoImpl implements UserDao{
                 user.setReading_exp(rs.getString("reading_exp"));
                 user.setAccount(rs.getString("account"));
                 user.setFinish_time(rs.getTimestamp("finish_time"));
+                user.setValid(rs.getString("valid"));
             }
             ConnDB.closeConn();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return user;
+    }
+
+    public boolean updateUserValid(String username){
+        boolean flag = false;
+        ConnDB.init();
+        int i = ConnDB.addUpdDel("update user set valid = '1' where username ='" + username + "'");
+        if(i>0){
+            flag = true;
+        }
+        ConnDB.closeConn();
+        return flag;
     }
 
 }

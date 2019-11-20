@@ -10,12 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.jhc.dao.InterfaceDao;
-import com.jhc.dao.InterfaceDaoImpl;
-import com.jhc.dao.UserDao;
-import com.jhc.dao.UserDaoImpl;
+import com.jhc.dao.*;
 import com.jhc.entity.Interface;
 import com.jhc.entity.User;
+import com.jhc.tools.GetMixContent;
+import com.jhc.tools.ValidationSelector;
 
 @WebServlet(name = "Login", value = "/Login")
 public class LoginServlet extends HttpServlet {
@@ -25,6 +24,18 @@ public class LoginServlet extends HttpServlet {
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        //validation
+//        ValidationSelector vs = new ValidationSelector();
+//        vs.select();
+
+        //getMixContent
+//        GetMixContent gmc = new GetMixContent();
+//        gmc.getTable();
+
+        //wordListInit
+//        ContentDao cd = new ContentDaoImpl();
+//        ((ContentDaoImpl) cd).wordListInit();
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");

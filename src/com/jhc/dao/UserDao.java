@@ -8,5 +8,6 @@ public interface UserDao {
     public boolean register(User user);//注册
     public boolean login(String username,String password);//登录
     public User getUser(String username,String password);//获取用户
+    public boolean updateUserValid(String username);//成功分配界面后激活用户
 
 }

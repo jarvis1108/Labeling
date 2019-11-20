@@ -12,6 +12,7 @@ public class User {
     private String reading_exp;
     private String account;
     private Timestamp finish_time;
+    private String valid;
 
 
     public String getUsername() {
@@ -92,5 +93,13 @@ public class User {
 
     public void setFinish_time(Timestamp create_time) {
         this.finish_time = create_time;
+    }
+
+    public String getValid() {
+        return valid;
+    }
+
+    public void setValid(String valid) {
+        this.valid = valid;
     }
 }

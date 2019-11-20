@@ -1,4 +1,7 @@
-<%@ page import="com.jhc.entity.User" %><%--
+<%@ page import="com.jhc.entity.User" %>
+<%@ page import="com.jhc.entity.Interface" %>
+<%@ page import="com.jhc.dao.InterfaceDao" %>
+<%@ page import="com.jhc.dao.InterfaceDaoImpl" %><%--
   Created by IntelliJ IDEA.
   User: Jarvis
   Date: 2019/9/18
@@ -49,17 +52,38 @@
         <br>
         <%
             String username = "";
-            User user = (User)session.getAttribute("user");
-            if(null != user){
-                username = user.getUsername();
+            int offset = -1;
+            int number = -1;
+
+            Interface interExp = (Interface) session.getAttribute("inter");
+            if(null != interExp){
+                username = interExp.getUsername();
+                offset = interExp.getOffset();
+                number = interExp.getNumber();
+
+                //开启下一轮标注
+                InterfaceDao id = new InterfaceDaoImpl();
+                ((InterfaceDaoImpl) id).updateInterfaceOffset(username, offset + 1);
             }
         %>
         <h2>谢谢, <%=username %></h2>
-        <p>标注已全部完成，非常感谢您的参与和支持！如有任何疑问，可咨询董同学（<a>dj_whu@163.com</a>）或樊同学（<a>18328446430</a>）。</p>
+        <p>你已经完成了第<b><%=offset %></b>轮实验，共有<b><%=number %></b>轮。非常感谢您的参与和支持！</p>
+        <p><a href="javascript:void(0);" onclick="submit()">点击此处</a>以继续进行下一轮标注</p>
+        <p>如有任何疑问，可咨询董同学（<a>dj_whu@163.com</a>）或樊同学（<a>18328446430</a>）。</p>
         <br>
         <hr>
         <p>© 2019 WHU HCI</p>
     </div>
 </div>
+
+<script>
+    function submit(){
+        var myForm = document.createElement("form");
+        myForm.method = "post";
+        myForm.action = "GetContent";
+        myForm.submit();
+    }
+</script>
+
 </body>
 </html>

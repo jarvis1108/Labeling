@@ -7,6 +7,7 @@ public class Result {
     private int interfaceId;
     private String result;
     private String highlight_text;
+    private int cost;
 
     public int getResultId() {
         return resultId;
@@ -54,5 +55,13 @@ public class Result {
 
     public void setHighlight_text(String highlight_text) {
         this.highlight_text = highlight_text;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }

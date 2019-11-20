@@ -3,12 +3,13 @@ package com.jhc.tools;
 import java.sql.*;
 
 public class ConnDB {
-    static String url = "jdbc:mysql://localhost:3306/Labeling?useSSL=false";
+    static String url = "jdbc:mysql://47.96.142.91:3306/Labeling?useSSL=false&characterEncoding=utf8";
     static String username = "root";
     static String password = "Jhc19971108!";
     static Connection conn = null;
     static ResultSet rs = null;
     static PreparedStatement ps =null;
+
     public static void init(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -18,6 +19,7 @@ public class ConnDB {
             e.printStackTrace();
         }
     }
+
     public static int addUpdDel(String sql){
         int i = 0;
         try {
@@ -30,6 +32,7 @@ public class ConnDB {
 
         return i;
     }
+
     public static ResultSet selectSql(String sql){
         try {
             ps =  conn.prepareStatement(sql);
@@ -40,6 +43,7 @@ public class ConnDB {
         }
         return rs;
     }
+
     public static void closeConn(){
         try {
             conn.close();

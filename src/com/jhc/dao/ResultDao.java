@@ -6,4 +6,5 @@ public interface ResultDao {
     public boolean submit(Result result);//提交一条标注结果
     public int countResultsByInterfaceId(int interfaceId);//统计某种界面的标注结果数
     public int countResultsByUsername(String username);//统计某个用户的标注结果数
+    public int countResultsByUsernameAndInterfaceId(String  username, int interfaceId);//监督实验：统计某用户某种界面的标注结果数
 }

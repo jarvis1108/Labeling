@@ -10,22 +10,44 @@ import java.util.List;
 public class ContentDaoImpl implements ContentDao {
 
     //获取文本的敏感词集合
-    public List<String> getWordList(String contentdId){
-        List<String> list = new ArrayList<String>();
-        String str;
+    private String getWordList(String contentdId){
+        String str = "";
         try {
-            ConnDB.init();
-            ResultSet rs = ConnDB.selectSql("select content from content_word where probability > 0.4 and substring_index(wordId,'_',1) =" + contentdId);
+            ResultSet rs = ConnDB.selectSql("select content from content_word where probability > 0.6 and substring_index(wordId,'_',1) =" + contentdId);
             while(rs.next()){ ;
-                str = rs.getString("content");
-                list.add(str);
+                str += rs.getString("content") + ",";
             }
-            ConnDB.closeConn();
-            return list;
+            return str;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    //初始化内容，获取敏感词集合，更新内容数据库
+    public void wordListInit(){
+        try {
+            List<Content> contentList = new ArrayList<>();//待存入数据库的内容
+
+            ConnDB.init();
+            ResultSet rs = ConnDB.selectSql("select * from content_frag limit 1200, 600");
+            while(rs.next()){
+                Content content = new Content();
+                content.setContentId(rs.getString("contentId"));
+                content.setWordList(getWordList(content.getContentId()));
+                contentList.add(content);
+            }
+
+            for(Content c : contentList){
+                ConnDB.addUpdDel("update content_frag set word_list = '" + c.getWordList() + "' where contentId ='" + c.getContentId() + "'");
+            }
+
+            ConnDB.closeConn();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     //获取所有文本
@@ -39,7 +61,29 @@ public class ContentDaoImpl implements ContentDao {
                 content.setContentId(rs.getString("contentId"));
                 content.setProbability(rs.getString("probability"));
                 content.setContent(rs.getString("content"));
-                content.setWordList(getWordList(rs.getString("contentId")));
+                content.setWordList(rs.getString("word_list"));
+                list.add(content);
+            }
+            ConnDB.closeConn();
+            return list;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //获取所有混合文本
+    public List<Content> getContentMixAll(int offset, int num) {
+        List<Content> list = new ArrayList<Content>();
+        try {
+            ConnDB.init();
+            ResultSet rs = ConnDB.selectSql("select * from content_mix limit " + offset + ", " + num);
+            while(rs.next()){
+                Content content = new Content();
+                content.setContentId(rs.getString("contentId"));
+                content.setProbability(rs.getString("probability"));
+                content.setContent(rs.getString("content"));
+                content.setWordList(rs.getString("word_list"));
                 list.add(content);
             }
             ConnDB.closeConn();
@@ -117,7 +161,7 @@ public class ContentDaoImpl implements ContentDao {
     }
 
     //获取文本的最敏感句及前后句
-    //合并句子内容，保留最敏感句Id
+    //合并句子内容和Id
     private Content getSentWithNeibor(String contentdId){
         List<Content> list = new ArrayList<Content>();
         //获取文本的最敏感句序号
@@ -136,6 +180,7 @@ public class ContentDaoImpl implements ContentDao {
                     content.setContentId(rs.getString("sentId"));
                     content.setProbability(rs.getString("probability"));
                     content.setContent(rs.getString("content"));
+                    content.setWordList(getWordList(contentdId));
                     list.add(content);
                 }
                 sentIndex++;
@@ -145,8 +190,14 @@ public class ContentDaoImpl implements ContentDao {
             e.printStackTrace();
         }
 
+        sent.setContentId("");
         sent.setContent("");
         for(Content cont : list){
+            if(sent.getContentId() == ""){
+                sent.setContentId(cont.getContentId());
+            }else{
+                sent.setContentId(sent.getContentId() + "," + cont.getContentId());
+            }
             sent.setContent(sent.getContent() + cont.getContent());
         }
         sent.setWordList(getWordList(contentdId));

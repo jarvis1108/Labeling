@@ -6,7 +6,7 @@ public class Content {
     private String contentId;
     private String content;
     private String probability;
-    private List<String> wordList;
+    private String wordList;
 
     public String getContentId() {
         return contentId;
@@ -26,13 +26,10 @@ public class Content {
     public void setProbability(String probability) {
         this.probability = probability;
     }
-
-
-    public List<String> getWordList() {
+    public String getWordList() {
         return wordList;
     }
-
-    public void setWordList(List<String> wordList) {
+    public void setWordList(String wordList) {
         this.wordList = wordList;
     }
 }

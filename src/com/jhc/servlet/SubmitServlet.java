@@ -1,9 +1,6 @@
 package com.jhc.servlet;
 
-import com.jhc.dao.ContentDao;
-import com.jhc.dao.ContentDaoImpl;
-import com.jhc.dao.ResultDao;
-import com.jhc.dao.ResultDaoImpl;
+import com.jhc.dao.*;
 import com.jhc.entity.Content;
 import com.jhc.entity.Interface;
 import com.jhc.entity.Result;
@@ -16,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "Submit", value = "/Submit")
@@ -24,25 +22,32 @@ public class SubmitServlet extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
         String highlight_text = request.getParameter("highlight_text");
+        int cost =  Integer.parseInt(request.getParameter("cost"));
 
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
         Interface inter = (Interface)session.getAttribute("inter");
-        Content content = (Content)session.getAttribute("content");
-        int contentIndex = (int)session.getAttribute("contentIndex");
+        Integer contentIndex = (Integer) session.getAttribute("contentIndex");
+//        Content content = (Content)session.getAttribute("content");
+        List<Content> contents = (ArrayList<Content>)session.getAttribute("contents");
+        Content content = contents.get(contentIndex);
 
         String username = user.getUsername();
+
+//        //监督实验：取得实际界面inter
+//        Interface inter = new Interface();
+//        int interfaceIdExp = interExp.getInterfaceId();
+//        int interOffsetExp = interExp.getOffset();
+//        if(interfaceIdExp == 16){
+//            InterfaceDao id = new InterfaceDaoImpl();
+//            inter = ((InterfaceDaoImpl) id).getExpInterface(username,interOffsetExp);
+//        }else{
+//            inter = interExp;
+//        }
+
         int InterfaceId = inter.getInterfaceId();
         String contentId = content.getContentId();
         String result = request.getParameter("result");
-
-//        测试无效
-//        request.setCharacterEncoding("utf-8");
-//        response.setContentType("text/html;charset=utf-8");
-//        String highlight_text = request.getParameter("highlight_text");
-
-//        本地测试成功，但在部署到服务器后测试无效
-//        String highlight_text = new String(request.getParameter("highlight_text").getBytes("iso-8859-1"),"utf-8");
 
         Result res = new Result();
         res.setUsername(username);
@@ -50,11 +55,16 @@ public class SubmitServlet extends HttpServlet {
         res.setInterfaceId(InterfaceId);
         res.setResult(result);
         res.setHighlight_text(highlight_text);
+        res.setCost(cost);
 
         ResultDao rd = new ResultDaoImpl();
 
         if(rd.submit(res)){
-            request.getRequestDispatcher("/GetContent").forward(request, response);
+//            request.getRequestDispatcher("/GetContent").forward(request, response);
+
+            //将页面索引置为下一页
+            session.setAttribute("contentIndex",contentIndex + 1);
+            response.sendRedirect("/Labeling/GetContent");
         }else{
             session.setAttribute("errorInfo","提交失败，请重试");
             request.getRequestDispatcher("/error.jsp").forward(request, response);

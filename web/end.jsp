@@ -10,7 +10,7 @@
 
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Thanks | WHU HCI</title>
+    <title>End | WHU HCI</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -47,15 +47,8 @@
 <div class="am-g">
     <div class="col-lg-4 col-md-8 col-sm-centered">
         <br>
-        <%
-            String username = "";
-            User user = (User)session.getAttribute("user");
-            if(null != user){
-                username = user.getUsername();
-            }
-        %>
-        <h2>谢谢, <%=username %></h2>
-        <p>标注已全部完成，非常感谢您的参与和支持！如有任何疑问，可咨询董同学（<a>dj_whu@163.com</a>）或樊同学（<a>18328446430</a>）。</p>
+        <h2>抱歉, </h2>
+        <p>目前实验1注册人数已达到上限，暂时停止注册，如有兴趣，您可继续参与实验2（QQ群号<a>933530166</a>）感谢您的支持与参与！</p>
         <br>
         <hr>
         <p>© 2019 WHU HCI</p>

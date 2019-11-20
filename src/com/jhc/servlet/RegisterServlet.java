@@ -37,13 +37,16 @@ public class RegisterServlet extends HttpServlet {
         String profession = request.getParameter("profession");
         String labeling_exp = request.getParameter("labeling_exp");
         String reading_exp = request.getParameter("reading_exp");
-        String account = request.getParameter("account");
+//        String account = request.getParameter("account");
+        String account = "";
 
         //计算截止日期：注册后48小时
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         cal.add(Calendar.DATE, 2);
         Timestamp finish_time = new Timestamp(cal.getTime().getTime());
+
+        String valid = "0";
 
         User user = new User();
         user.setUsername(username);
@@ -56,6 +59,7 @@ public class RegisterServlet extends HttpServlet {
         user.setReading_exp(reading_exp);
         user.setAccount(account);
         user.setFinish_time(finish_time);
+        user.setValid(valid);
 
         UserDao ud = new UserDaoImpl();
         InterfaceDao id = new InterfaceDaoImpl();
@@ -69,15 +73,27 @@ public class RegisterServlet extends HttpServlet {
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
 
-        //为新用户分配界面
+        //常规实验: 为新用户分配界面
         if(id.allocateInterfaceToUser(username)){
+            ud.updateUserValid(username);
             Interface inter = id.getInterface(username);
             session.setAttribute("inter", inter);
             request.getRequestDispatcher("/GetContent").forward(request, response);
         }else{
-            request.setAttribute("errorInfo","本次实验已经结束，谢谢");
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            //用户注册已满
+            request.getRequestDispatcher("/end.jsp").forward(request, response);
         }
+
+//        //监督实验: 激活用户，所取得的inter内interfacId为16，offset表示当前标注中的界面序号
+//        if(id.validExpUser(username)){
+//            ud.updateUserValid(username);
+//            Interface inter = id.getInterface(username);
+//            session.setAttribute("inter", inter);
+//            request.getRequestDispatcher("/GetContent").forward(request, response);
+//        }else{
+//            //用户注册已满
+//            request.getRequestDispatcher("/end.jsp").forward(request, response);
+//        }
 
     }
 
